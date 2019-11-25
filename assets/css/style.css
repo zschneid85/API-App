@@ -1,0 +1,199 @@
+#ytvid0,
+#ytvid1,
+#ytvid2,
+#ytvid3,
+iframe{
+    margin-left: 0px;
+    margin-top: 15px;
+}
+
+.searched-products {
+    overflow: auto;
+    height: 330px;
+}
+th, tr{
+    color: black;
+}
+h2{
+    text-align: center;
+}
+
+body, .jumbotron {
+    background-color:#163b61;
+    color: white;
+}
+
+ #specId{
+     margin-top: 25px;
+ }
+button {
+    background-color: #fdf051;
+    color:black;
+    box-shadow: 10px 10px black;
+    text-shadow: 2px 2px 4px white;
+}
+#panelTitle {
+    font-size: 20px;
+    color: white;
+    text-shadow: 2px 2px 4px black;
+}
+#panelHeading {
+    background-color: #fdf051;
+    color: black;
+}
+#clearBtn {
+    margin-left: 15px;
+}
+#product-videos, #productvideos{
+    color: white;
+    background-color: #e83324;
+    font-size: 20px;
+    text-shadow: 2px 2px 4px black;
+}
+#product-info {
+    color: black;
+    border-width: 0;
+}
+#product-details {
+    background-color: #fdf051;
+    color: black;
+    height: 40px;
+}
+
+p {
+    font-size: 20px;
+}
+
+.bb{ 
+    margin-left: 0px;
+    height: 275px;
+    width: 500px;
+}
+
+.plus{ 
+    margin-left: -120px;
+    height: 200px;
+    width: 200px;
+}
+
+.yt{ 
+    height: 320px;
+    width: 550px;
+    margin-left: -50px;
+    margin-top: -70px;
+}
+
+
+#submit2{
+    margin-top: 20px;
+    background-color: #fdf051;
+    color: black;
+}
+ h3 {
+     font-size: 20px;
+ }
+
+ .panel{
+    box-shadow: 10px 10px black;
+ }
+
+
+ .details-panel, .details-pic{
+    border: none;
+    box-shadow: none;
+    
+}
+/* CSS for modal */
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    /* width: 500px; */
+    width:100%;
+    height: 400px;
+    overflow: auto; /* Enable scroll if needed */
+    color: black;
+    margin-left :15%;
+    margin-top: 15%;
+    background-color: transparent;
+    border-style: none;
+    box-shadow: none;
+
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    /* margin: auto; */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+/* The Close Button */
+.close {
+    color: black;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+@media only screen and (max-width: 1200px) {
+    .bb{ 
+        margin-left: 0px;
+        height: 275px;
+        width: 425px;
+    }
+    
+    .plus{ 
+        margin-left: -120px;
+        height: 200px;
+        width: 200px;
+    }
+    
+    .yt{ 
+        height: 320px;
+        width: 515px;
+        margin-left: -50px;
+        margin-top: -70px;
+    }
+}
+
+@media only screen and (max-width: 770px) {
+    .bb{ 
+        margin-left: 75px;
+        height: 275px;
+        width: 425px;
+    }
+    
+    .plus{ 
+        margin-left: 150px;
+        height: 200px;
+        width: 200px;
+        margin-top: -75px;
+    }
+    
+    .yt{ 
+        height: 320px;
+        width: 515px;
+        margin-left: -25px;
+        margin-top: -70px;
+    }
+}
+#ppic{
+    width:100%;
+
+}
+

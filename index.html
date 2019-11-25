@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="assets/images/icon.jpeg" />
+    <title>Best Buy - YouTube</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <style>
+        /* Always set the map height explicitly to define the size of the div
+         * element that contains the map. */
+        #map {
+          height: 80%;
+        }
+        /* Optional: Makes the sample page fill the window. */
+        html, body {
+          height: 100%;
+          margin: 10px;
+          padding: 10px;
+        }
+        .controls {
+          background-color: #fff;
+          border-radius: 2px;
+          border: 1px solid transparent;
+          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+          box-sizing: border-box;
+          font-family: Roboto;
+          font-size: 15px;
+          font-weight: 300;
+          height: 29px;
+          margin-left: 17px;
+          margin-top: 10px;
+          outline: none;
+          padding: 0 11px 0 13px;
+          text-overflow: ellipsis;
+          width: 400px;
+        }
+  
+        .controls:focus {
+          border-color: #4d90fe;
+        }
+        .title {
+          font-weight: bold;
+        }
+        #infowindow-content {
+          display: none;
+        }
+        #map #infowindow-content {
+          display: inline;
+        }
+  
+      </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+        
+            <div class="col-md-4 col-sm-2 bb">
+                <h1><img class = "mainLogo img-responsive" src = "assets/images/bblogo.png"></h1>
+            </div>
+            <div class="col-md-4 col-sm-2 plus">
+                    <h1><img class = "mainLogo img-responsive" src = "assets/images/plus.png"></h1>
+            </div>
+            <div class="col-md-4  col-sm-2 yt">
+                    <h1><img class = "mainLogo img-responsive" src = "assets/images/ytlogo.png"></h1>
+            </div>
+       
+        </div>
+
+        <div class = "row">
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div id="panelHeading" class="panel-heading">
+                        <h3 id= panelTitle class="panel-title">Product Lookup</h3>
+                    </div>
+                    <div id="panelBody" class="panel-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="exampleFormControlSelect1">Product Category</label>
+                                <select class="form-control" id="catId">
+                                    <option value = "default">Choose Category</option>
+                                    <option value = "pcmcat273800050002">Action Camcorders</option>
+                                    <option value = "pcmcat209400050001">All Cell Phones with Plans</option>
+                                    <option value = "abcat0501000">Desktop & All-in-One Computers</option>
+                                    <option value = "abcat0401000">Digital Cameras</option>
+                                    <option value = "pcmcat369900050001">Drones & Drone Accessories</option>
+                                    <option value = "pcmcat242800050021">Health, Fitness & Beauty</option>
+                                    <option value = "abcat0204000">Headphones</option>
+                                    <option value = "pcmcat241600050001">Home Audio</option>
+                                    <option value = "pcmcat254000050002">Home Automation & Security</option>
+                                    <option value = "pcmcat209000050006">iPad, Tablets & E-Readers</option>
+                                    <option value = "abcat0502000">Laptops</option>
+                                    <option value = "pcmcat247400050001">Macbooks</option> 
+                                    <option value = "pcmcat232900050000">Nintendo 3DS</option>
+                                    <option value = "pcmcat1476977522176">Nintendo Switch</option>
+                                    <option value = "pcmcat295700050012">PlayStation 4</option>
+                                    <option value = "pcmcat310200050004">Portable & Wireless Speakers</option>
+                                    <option value = "abcat0904000">Ranges, Cooktops & Ovens</option>
+                                    <option value = "abcat0901000">Refrigerators</option>
+                                    <option value = "abcat0912000">Small Kitchen Appliances</option>
+                                    <option value = "abcat0101000">Tvs</option>
+                                    <option value = "abcat0910000">Washers & Dryers</option>
+                                    <option value = "pcmcat273800050036">Wii U</option>
+                                    <option value = "pcmcat300300050002">Xbox One</option>
+                                </select>
+
+                                <div class="form-group">
+                                    <label for="exampleFormControlInput1">Product Name</label>
+                                    <input type="text" class="form-control" id="productName" placeholder="Enter Keyword(s)">
+                                    <br>
+                                    <button class="btn" id="submit">Submit<span></span></button>
+                                    <button class="btn" id="clearBtn">Clear<span></span></button>
+                                </div>                            
+                            </div>
+                        </form>
+
+                        <div class="form-group apiDatalist">
+                                <select class="form-control" id="specId">
+                                    <!-- new options added here -->
+                                </select>
+                                <div class="form-group">
+                                        <button class="btn" id="submit2">Submit<span></span></button>
+                                    </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-6">
+                    <div class="panel panel-default">
+                            <div id="panelHeading" class="panel-heading">
+                                <h3 id= panelTitle class="panel-title">Recently Searched Products</h1>
+                            </div>
+        
+                            <div class="panel-body searched-products">
+                                <table class="table table-hover" id="producttable">
+                                    <thead>
+                                        <tr>
+                                            <th>Product Name</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="display"></tbody>
+                                </table>
+                            </div>
+                        </div>
+            </div>
+
+        </div> 
+
+        
+            <div id = "container">
+                <div class="row prodInfo">
+                    <div class="col-md-12">
+                        <div class="panel panel-default">
+                            <div id="product-details" class="panel-body">
+                                <h3 id= panelTitle class="panel-title">Product Details</h3> 
+                            </div>
+
+                                <div class="row">
+                                    <div class="col-md-6 details-panel">
+                                        <div class="panel panel-default">
+                                            <div id="product-info" class="panel-body">
+                                                <!-- product info goes here -->
+                                            </div>                                      
+                                        </div> 
+                                    </div>
+
+                                    <div class="col-md-6 col details-pic">
+                                        <div class="panel panel-default">
+                                            <div id="product-pic" class="panel-body">
+                                                <!-- product pic goes here -->
+                                            </div>                                                    
+                                        </div>
+                                    </div>
+                                </div>                                  
+                        </div>
+                    </div>             
+                
+                </div>                        
+            </div>                      
+
+            <div id = "container">
+                <div class="row prodVideos">
+                    <div class="col-md-12">
+                        <div class="panel panel-default">
+                            <div id="productvideos" class="panel-heading">
+                                <h3 id=product-videos class="panel-title">YouTube Product Unboxings/Reviews</h3>
+                            </div>
+                            <div id="panelBody" class="panel-body wells">
+                                <!-- Product videos go here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>  
+    
+    
+    
+<!-- The Modals -->
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p>Please enter search term(s) before hitting submit</p>
+      <p>Try again.............</p>
+    </div>
+  
+</div>
+
+<div id="noResultsModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p>No results found, please try again</p>
+    </div>
+  
+</div>
+
+            
+
+  <!-- scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+    <script src="assets/javascript/firebase.js"></script>
+    <script src="assets/javascript/bestbuy.js"></script>
+    <script src="assets/javascript/youtube.js"></script>
+    
+    
+</body>
+
+</html>
