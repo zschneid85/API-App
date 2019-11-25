@@ -1,5 +1,5 @@
-# Project1-APIs
-Project Summary:
+# APIs
+Web App Summary:
 - User inputs a product category and and search term(s).  
 - The category and search term(s) are used in an API call to Best Buy
 - An array of specific product objects are returned
@@ -9,6 +9,5 @@ Project Summary:
 - The specific product is also pushed to a firebase database which is used to display a table of all recently searched products
 
 
-https://joe-christopher.github.io/Project1-APIs/
 
 
